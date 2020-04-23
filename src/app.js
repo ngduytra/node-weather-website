@@ -16,6 +16,7 @@ app.set('view engine','hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
+const port = process.env.PORT || 3000
 // set static directory to server
 app.use(express.static(publicDirectoryPath))
 
@@ -76,6 +77,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('App is running on port 3000')
+app.listen(port, ()=>{
+    console.log('App is running on port '+port)
 })
